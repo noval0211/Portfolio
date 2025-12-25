@@ -1,4 +1,3 @@
-import { useRef } from "react"
 import dataProject from "../json/project.json"
 
 export default function Project() {
