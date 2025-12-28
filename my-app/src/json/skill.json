@@ -1,0 +1,73 @@
+{
+    "skill": [
+        {
+            "title": "Frontend",
+            "describe": "UI/UX | Client Side",
+            "icon": "code",
+            "list": [
+                {
+                    "name": "React",
+                    "percentage": 60
+                },
+                {
+                    "name": "NextJS",
+                    "percentage": 70
+                },
+                {
+                    "name": "Tailwind CSS",
+                    "percentage": 80
+                },
+                {
+                    "name": "TypeScript",
+                    "percentage": 55
+                }
+            ]
+        },
+        {
+            "title": "Backend",
+            "describe": "Server & Database",
+            "icon": "server",
+            "list": [
+                {
+                    "name": "Node.JS",
+                    "percentage": 80
+                },
+                {
+                    "name": "Express",
+                    "percentage": 70
+                },
+                {
+                    "name": "NestJS",
+                    "percentage": 50
+                },
+                {
+                    "name": "MySql",
+                    "percentage": 50
+                },
+                {
+                    "name": "PostgreSQL",
+                    "percentage": 50
+                },
+                {
+                    "name": "MongoDB",
+                    "percentage": 50
+                }
+            ]
+        },
+        {
+            "title": "Tools",
+            "describe": "Workflow",
+            "icon": "wrench",
+            "list": [
+                {
+                    "name": "Github",
+                    "percentage": 50
+                },
+                {
+                    "name": "Docker",
+                    "percentage": 50
+                }
+            ]
+        }
+    ]
+}
