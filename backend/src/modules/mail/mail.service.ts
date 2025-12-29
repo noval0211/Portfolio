@@ -10,7 +10,9 @@ export class MailService {
 
     constructor(private configService: ConfigService) {
         this.transporter = nodemailer.createTransport({
-            service: "gmail",
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false,
             auth: {
                 type: "OAuth2",
                 user: this.configService.get<string>('USER_EMAIL'),
@@ -18,10 +20,18 @@ export class MailService {
                 clientSecret: this.configService.get<string>('GOOGLE_CLIENT_SECRET'),
                 refreshToken: this.configService.get<string>('GOOGLE_REFRESH_TOKEN'),
             },
-            connectionTimeout: 120000,
-            greetingTimeout: 120000,              
+            connectionTimeout: 60000,
+            greetingTimeout: 30000,
             socketTimeout: 300000,
         })
+
+        this.transporter.verify((error, success) => {
+            if (error) {
+                console.error('SMTP connection failed:', error);
+            } else {
+                console.log('SMTP connection successful!');
+            }
+        });
     }
 
     async sendMsg(mailDto: MailDto) {
@@ -32,7 +42,7 @@ export class MailService {
                 subject: mailDto.subject,
                 text: mailDto.message,
             })
-            console.log(info)
+            console.log(info.response)
             return info
         } catch (err) {
             console.error('Failed to send email:', err);
