@@ -2,38 +2,51 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { MailDto } from "./dto/mail.dto";
 import * as nodemailer from 'nodemailer'
 import { ConfigService } from "@nestjs/config";
-import { SentMessageInfo, Options } from "nodemailer/lib/smtp-transport";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
+import { google } from "googleapis";
 
 @Injectable()
 export class MailService {
-    private transporter: nodemailer.Transporter<SentMessageInfo, Options>;
+    private transporter: nodemailer.Transporter;
 
-    constructor(private configService: ConfigService) {
-        this.transporter = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                type: "OAuth2",
-                user: this.configService.get<string>('USER_EMAIL'),
-                clientId: this.configService.get<string>('GOOGLE_CLIENT_ID'),
-                clientSecret: this.configService.get<string>('GOOGLE_CLIENT_SECRET'),
-                refreshToken: this.configService.get<string>('GOOGLE_REFRESH_TOKEN'),
-            },
-        })
-    }
+  constructor(private configService: ConfigService) {}
 
-    async sendMsg(mailDto: MailDto) {
-        try {
-            const info = await this.transporter.sendMail({
-                from: `"${mailDto.name} - ${mailDto.email}" <${this.configService.get<string>("USER_EMAIL")}>`,
-                to: this.configService.get<string>('MAIL_TO'),
-                subject: mailDto.subject,
-                text: mailDto.message,
-            })
+  async initTransporter() {
+    const oAuth2Client = new google.auth.OAuth2(
+      this.configService.get('GOOGLE_CLIENT_ID'),
+      this.configService.get('GOOGLE_CLIENT_SECRET'),
+      this.configService.get('BASE_URL'),
+    );
+    oAuth2Client.setCredentials({
+      refresh_token: this.configService.get('GOOGLE_REFRESH_TOKEN'),
+    });
+    const accessToken = await oAuth2Client.getAccessToken();
 
-            return info
-        } catch (err) {
-            console.error('Failed to send email:', err);
-            throw new NotFoundException('Failed To Send Message')
-        }
-    }
+    this.transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            type: 'OAuth2',
+            user: this.configService.get('USER_EMAIL'),
+            clientId: this.configService.get('GOOGLE_CLIENT_ID'),
+            clientSecret: this.configService.get('GOOGLE_CLIENT_SECRET'),
+            refreshToken: this.configService.get('GOOGLE_REFRESH_TOKEN'),
+            accessToken: accessToken.token,
+        },
+    } as SMTPTransport.Options);
+  }
+
+  async sendMsg(mailDto: MailDto) {
+    if (!this.transporter) await this.initTransporter();
+
+    this.transporter
+      .sendMail({
+        from: `"${mailDto.name} - ${mailDto.email}" <${this.configService.get('USER_EMAIL')}>`,
+        to: this.configService.get('MAIL_TO'),
+        subject: mailDto.subject,
+        text: mailDto.message,
+      })
+      .catch((err) => console.error('Failed to send email:', err));
+
+    return { message: 'Email request queued' };
+  }
 }
