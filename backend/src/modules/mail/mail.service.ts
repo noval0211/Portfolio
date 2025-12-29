@@ -10,27 +10,30 @@ export class MailService {
 
     constructor(private configService: ConfigService) {
         this.transporter = nodemailer.createTransport({
-            host: this.configService.get<string>('SMTP_HOST'),
-            port: this.configService.get<number>('SMTP_PORT'),
-            secure: this.configService.get<boolean>('SMTP_SECURE'),
+            service: "gmail",
             auth: {
-                user: this.configService.get<string>('SMTP_USER'),
-                pass: this.configService.get<string>('SMTP_PASS'),
+                type: "OAuth2",
+                user: this.configService.get<string>('USER_EMAIL'),
+                clientId: this.configService.get<string>('GOOGLE_CLIENT_ID'),
+                clientSecret: this.configService.get<string>('GOOGLE_CLIENT_SECRET'),
+                refreshToken: this.configService.get<string>('GOOGLE_REFRESH_TOKEN'),
             },
-            connectionTimeout: 30000,
-            greetingTimeout: 30000,
-            socketTimeout: 30000
         })
     }
 
     async sendMsg(mailDto: MailDto) {
-        this.transporter.sendMail({
-            from: `"${mailDto.name} - ${mailDto.email}" <${this.configService.get<string>("SMTP_USER")}>`,
-            to: this.configService.get<string>('MAIL_TO'),
-            subject: mailDto.subject,
-            text: mailDto.message,
-        }).catch(console.error);
+        try {
+            const info = await this.transporter.sendMail({
+                from: `"${mailDto.name} - ${mailDto.email}" <${this.configService.get<string>("USER_EMAIL")}>`,
+                to: this.configService.get<string>('MAIL_TO'),
+                subject: mailDto.subject,
+                text: mailDto.message,
+            })
 
-        return { message: "Email request queued" };
+            return info
+        } catch (err) {
+            console.error('Failed to send email:', err);
+            throw new NotFoundException('Failed To Send Message')
+        }
     }
 }
