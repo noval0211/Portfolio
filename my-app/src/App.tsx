@@ -34,7 +34,7 @@ function App() {
       <div className="overflow-x-hidden">
         <Navbar setSection={sectionMove} activeSection={activeSection} />
 
-        <section id="me" className="w-screen max-h-screen ">
+        <section id="me" className="w-screen min-h-screen h-fit ">
           <Me />
         </section>
 

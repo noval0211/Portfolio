@@ -17,7 +17,7 @@ export default function Navbar({ setSection, activeSection }: SectionProps) {
         <>
             <nav className="z-50 fixed top-0 w-screen flex justify-center">
                 <div className="relative flex items-center justify-between bg-[var(--background)] w-[90%] pb-1 px-10 text-[var(--color)] text-lg outline-2 outline-[var(--color)] select-none rounded-b-2xl">
-                    <a>Text</a>
+                    <a className="font-bold">My Porto</a>
 
                     <ul className="flex gap-2">
                         {listNavbar.map((items, index) => {

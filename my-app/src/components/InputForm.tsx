@@ -17,7 +17,7 @@ export default function InputForm({ label, type, placeholder, valueName, setValu
                 <input
                     type={type}
                     placeholder={placeholder}
-                    className="bg-[var(--background)] px-3 py-2 outline-2 outline-[var(--color)] rounded-md"
+                    className="bg-[var(--background)] px-3 py-2 outline-1 outline-[var(--color)] rounded-md"
                     value={valueName}
                     onChange={(e) => setValue(e.target.value)}
                 />

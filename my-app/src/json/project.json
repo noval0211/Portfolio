@@ -1,13 +1,9 @@
 {
     "project": [
         {
-            "title": "wikipedia",
-            "url": "http://wikipedia.com",
-            "describe": "lorem"
-        },{
-            "title": "wikipedia",
-            "url": "http://wikipedia.com",
-            "describe": "lorem"
+            "title": "TopUp Store",
+            "url": "https://topupstore-omega.vercel.app/",
+            "describe": "This is my personal project. builded with firebase auth for authorization/login system"
         }
     ]
 }

@@ -5,8 +5,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --color: rgba(255, 255, 255);
-  --background: #242424;
+  --color: #EEEEEE;
+  --background: #222831;
+  --secondary-color: #393E46;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

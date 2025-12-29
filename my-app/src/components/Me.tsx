@@ -2,13 +2,14 @@
 export default function Me() {
     return (
         <>
-            <div className="h-screen pt-50">
+            <div className=" pt-50">
                 <div className="relative bg-[var(--color)] h-full">
-                    
-                    {/* PROFILE PICTURE */}
-                    <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-50 h-full ">
-                        <div className="w-full h-50 bg-[var(--color)] outline-2 outline-[var(--background)]  rounded-2xl">
 
+                    {/* PROFILE PICTURE */}
+                    <div className="absolute -top-20 left-1/2 -translate-x-1/2 scale-125 h-80 ">
+                        <div className="relative w-full h-full bg-[var(--color)] outline-4 outline-[var(--background)] rounded-2xl">
+                            <img src="./me.png"
+                                className="bg-gradient-to-b from-black object-scale-down w-full h-full rounded-2xl" />
                         </div>
                     </div>
 
@@ -16,21 +17,21 @@ export default function Me() {
                     <div className="absolute right-1/6 -translate-y-1/2 ">
                         <ul className="flex gap-2">
                             <li className="object-cover w-[3vw] h-[3vw] p-0.5 rounded-full flex items-center justify-center bg-[var(--background)] outline-2 outline-[var(--color)] cursor-pointer">
-                                <img src="https://cdn-icons-png.flaticon.com/128/3670/3670032.png"/>
+                                <img src="https://cdn-icons-png.flaticon.com/128/3670/3670032.png" />
                             </li>
                             <li className="object-cover w-[3vw] h-[3vw] p-0.5 rounded-full flex items-center justify-center bg-[var(--background)] outline-2 outline-[var(--color)] cursor-pointer">
-                                <img src="https://cdn-icons-png.flaticon.com/128/15707/15707749.png"/>
+                                <img src="https://cdn-icons-png.flaticon.com/128/15707/15707749.png" />
                             </li>
                             <li className="object-cover w-[3vw] h-[3vw] p-0.5 rounded-full flex items-center justify-center bg-[var(--background)] outline-2 outline-[var(--color)] cursor-pointer">
-                                <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png"/>
+                                <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" />
                             </li>
-                        
+
                         </ul>
                     </div>
 
                     {/* CONTENT */}
                     <div className="w-full p-15 flex justify-between">
-                        <div className="w-1/2 flex flex-col">
+                        <div className="w-1/3 flex flex-col">
                             <a className="font-extrabold">Hello, I'm Naufal Daffa Sya'bana</a>
                             <a>I as a Junior Web Developer</a>
 
@@ -43,7 +44,7 @@ export default function Me() {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-1/2 pl-35 ">
+                        <div className="w-1/3">
                             <div className="w-full h-full">
                                 <a className=" font-extrabold">About Me</a>
                                 <p className="mt-5">

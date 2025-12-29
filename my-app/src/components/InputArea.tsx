@@ -17,7 +17,7 @@ export default function InputArea({ label, placeholder, valueName, setValue }: f
                     placeholder={placeholder}
                     value={valueName}
                     onChange={(e) => setValue(e.target.value)}
-                    className="bg-[var(--background)] px-3 py-2 min-h-40 outline-2 outline-[var(--color)] rounded-md"
+                    className="bg-[var(--background)] px-3 py-2 min-h-40 outline-1 outline-[var(--color)] rounded-md"
                 />
             </div>
         </>

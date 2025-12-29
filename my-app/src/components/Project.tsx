@@ -12,7 +12,7 @@ export default function Project() {
                     <a className="text-4xl font-bold">P r o j e c t</a>
                     <span className="w-1/2 text-center opacity-70">Here is a web application I worked on, to demonstrate my skills in web application development.</span>
                 </div>
-                <div className={`grid ${dataLength == 1 ? 'grid-cols-1 scale-75 -mt-20' : 'grid-cols-2 mt-10'} gap-10 gap-y-20 px-20`}>
+                <div className={`grid ${dataLength == 1 ? 'grid-cols-1 scale-90 -mt-20' : 'grid-cols-2 mt-10'} gap-10 gap-y-20 px-20`}>
                     {data.map((items, index) => (
                         <div
                             key={index}
@@ -32,7 +32,7 @@ export default function Project() {
 />
                             </div>
                             <div className="text-[var(--color)] px-3 mt-2">
-                                <p className="mt-2 opacity-70 text-sm">
+                                <p className="mt-2 opacity-70">
                                     {items.describe}
                                 </p>
                             </div>
