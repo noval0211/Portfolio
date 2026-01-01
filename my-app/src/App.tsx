@@ -24,10 +24,14 @@ function App() {
           setActiveSection(entry.target.id)
         }
       })
-    }, { threshold: 0.4})
+    }, { threshold: 0.4 })
     section.forEach((section) => observer.observe(section))
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    fetch("https://topupstore-omega.vercel.app");
+  }, []);
 
   return (
     <>
@@ -41,7 +45,7 @@ function App() {
         <section id="skills" className="w-screen min-h-screen h-fit">
           <Skills />
         </section>
-        
+
         <hr className="bg-[var(--color)] h-0.5" />
 
         <section id="project" className="w-screen min-h-screen h-fit">

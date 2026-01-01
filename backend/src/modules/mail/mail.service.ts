@@ -35,18 +35,16 @@ export class MailService {
     }
 
     async sendMsg(mailDto: MailDto) {
-        try {
-            const info = await this.transporter.sendMail({
-                from: `"${mailDto.name} - ${mailDto.email}" <${this.configService.get<string>("USER_EMAIL")}>`,
-                to: this.configService.get<string>('SMTP_USER'),
-                subject: mailDto.subject,
-                text: mailDto.message,
-            })
-            console.log(info.response)
-            return info
-        } catch (err) {
-            console.error('Failed to send email:', err);
-            throw new NotFoundException('Failed To Send Message')
-        }
+        await this.transporter.sendMail({
+            from: `"${mailDto.name} - ${mailDto.email}" <${this.configService.get<string>("USER_EMAIL")}>`,
+            to: this.configService.get<string>('SMTP_USER'),
+            subject: mailDto.subject,
+            text: mailDto.message,
+        }).then((info) => {
+            console.log("Message sent: %s", info.messageId);
+            // Get a URL to preview the message in Ethereal's web interface
+            console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+        })
+
     }
 }

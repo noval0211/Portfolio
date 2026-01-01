@@ -1,7 +1,7 @@
 {
     "project": [
         {
-            "title": "TopUp Store",
+            "title": "TopUp Store -- (On Progress)",
             "url": "https://topupstore-omega.vercel.app/",
             "describe": "This is my personal project. builded with firebase auth for authorization/login system"
         }

@@ -80,17 +80,20 @@ export default function Contact() {
     ]
     return (
         <>
-            <div className="py-20">
+            <div className="py-25">
                 <div className="text-[var(--color)] flex flex-col justify-center items-center gap-2 ">
                     <a className="text-4xl font-bold">Contact Me</a>
                     <span className="opacity-70 w-1/2 text-center">Have a question or want to work together? Feel free to reach out. I'll get back to you as soon as possible.</span>
                 </div>
-                <div className="flex items-center gap-5 mx-20 mt-10">
+
+                <div className="flex flex-col md:flex-row items-center md:gap-5 mx-5 lg:mx-20 mt-10">
+                    
+                    {/* FEATURE MAIL FORM */}
                     <form onSubmit={MailPost}
-                        className="relative w-1/2 p-10 bg-neutral-900 rounded-2xl scale-90">
+                        className="relative order-2 md:order-1 w-full lg:w-1/2 p-10 bg-neutral-900 rounded-2xl scale-75 md:scale-90">
 
                         <div className="absolute top-0 left-0 w-full h-full flex flex-col gap-5 items-center justify-center text-[var(--color)] font-bold backdrop-blur-xs rounded-2xl">
-                            <a className="text-3xl">Sorry Feature Not Working</a>
+                            <a className="text-3xl text-center">Sorry Feature Not Working</a>
                             <a className="w-1/2 text-center opacity-70">No money to buy server host for deploy backend service 🙃</a>
                         </div>
 
@@ -101,7 +104,8 @@ export default function Contact() {
                         <button type="submit" className="w-full py-3 mt-3 font-bold text-[var(--color)] bg-gradient-to-r from-blue-500 to-green-500 rounded-md cursor-pointer">Send Message</button>
                     </form>
 
-                    <div className="w-1/2 flex flex-col gap-4 px-20 scale-90">
+                    {/* CLASIC */}
+                    <div className="w-[80%] lg:w-1/2 md:order-2 flex flex-col gap-4  scale-90">
                         {dataContact.map((items, index) => {
                             return (
                                 <div

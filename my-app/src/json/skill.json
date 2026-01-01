@@ -30,11 +30,11 @@
             "list": [
                 {
                     "name": "Node.JS",
-                    "percentage": 80
+                    "percentage": 70
                 },
                 {
                     "name": "Express",
-                    "percentage": 70
+                    "percentage": 60
                 },
                 {
                     "name": "NestJS",
@@ -61,11 +61,11 @@
             "list": [
                 {
                     "name": "Github",
-                    "percentage": 50
+                    "percentage": 65
                 },
                 {
                     "name": "Docker",
-                    "percentage": 50
+                    "percentage": 40
                 }
             ]
         }
