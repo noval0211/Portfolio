@@ -38,11 +38,11 @@ function App() {
       <div className="overflow-x-hidden">
         <Navbar setSection={sectionMove} activeSection={activeSection} />
 
-        <section id="me">
+        <section id="me" className="w-screen h-fit xl:h-screen">
           <Me />
         </section>
 
-        <hr className="bg-[var(--color)] h-0.5 border-none"/>
+        <hr className="bg-[var(--color)] h-0.5 border-none" />
 
         <section id="skills" className="w-screen min-h-screen h-fit">
           <Skills />

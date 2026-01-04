@@ -4,10 +4,10 @@ export default function Me() {
     const [about, setAbout] = useState(false)
     return (
         <>
-            <div className="w-screen min-h-screen h-fit bg-[var(--color)] flex flex-col md:flex-row items-center md:items-start justify-around select-none md:pr-24">
+            <div className=" bg-[var(--color)] h-full flex flex-col md:flex-row items-center md:items-start justify-around select-none md:pr-24">
 
                 {/* PROFILE PICTURE */}
-                <div className="w-full md:w-1/3 pt-30">
+                <div className="w-full h-full md:w-1/3 pt-30">
                     <div className="flex items-center justify-center">
                         <div className="relative bg-blue-500 w-40 md:w-50 lg:w-60 rounded-2xl select-none ">
                             <img src="./me.png"
@@ -34,7 +34,7 @@ export default function Me() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="w-full md:w-2/3 md:bg-[var(--background)] text-[var(--background)] md:text-[var(--color)] p-10 md:p-20 md:pt-32 ">
+                <div className="w-full h-full md:w-2/3 md:bg-[var(--background)] text-[var(--background)] md:text-[var(--color)] p-10 md:p-20 md:pt-32 ">
 
                     <div className="w-full flex flex-col ">
                         {/* MOBILE UI GREETINSG */}
