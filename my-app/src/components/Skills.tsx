@@ -90,7 +90,7 @@ export default function Skills() {
 
                 {/* LITTLE TEXT DESCRIBE */}
                 <span className="text-center text-[var(--color)] opacity-70 ">
-                    Here are the tools that I can use in web development for frontend and backend.
+                    Here are the tools I use to develope frontend and backend of project web applications.
                 </span>
                 
                 {/* LIST */}
@@ -115,7 +115,6 @@ export default function Skills() {
                                     boxShadow: "0px 0px 0px rgba(0,0,0,1)",
                                     ease: "power2.out"
                                 })}>
-
                                 <div className="flex gap-3 items-center">
                                     <div className={`bg-gradient-to-br ${Color} w-15 h-15 p-[4px] rounded-full`}>
                                         <div className="icon-spin w-full h-full bg-[var(--background)] flex items-center justify-center rounded-full" >
@@ -141,7 +140,6 @@ export default function Skills() {
                                                 <div className="z-10 absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 to-green-500 outline-2 rounded-full"
                                                     style={{ width: `${items.percentage}%` }} />
                                             </div>
-
                                         </li>
                                     ))}
                                 </ul>
@@ -150,7 +148,6 @@ export default function Skills() {
                             </div>
                         )
                     })}
-
                 </div>
             </div >
         </>

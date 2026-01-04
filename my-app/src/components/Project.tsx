@@ -11,7 +11,7 @@ export default function Project() {
                 <div className="flex flex-col items-center justify-center md:gap-5 text-[var(--color)]">
                     <a className="text-4xl font-bold text-green-500 text-shadow-blue-500 text-shadow-lg">Project</a>
                     <div className="p-10 md:p-0 lg:w-1/2 text-center bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent  opacity-70">
-                        <a className="font-bold">Here is a web application I worked on, to demonstrate my skills in web application development.</a>
+                        <a className="font-bold">Here is a web application I worked on to demonstrate my skills in web application development.</a>
                     </div>
                 </div>
                 <div className={`grid ${dataLength == 1 ? 'lg:scale-75' : 'lg:grid-cols-2 xl:mt-20'} origin-top gap-10 xl:gap-y-20 lg:px-10 mt-10 md:mt-20 `}>

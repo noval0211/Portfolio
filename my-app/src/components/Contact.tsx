@@ -76,14 +76,13 @@ export default function Contact() {
             posibleContact: true,
             imgUrl: 'https://cdn-icons-png.flaticon.com/128/3670/3670051.png'
         },
-
     ]
     return (
         <>
             <div className="py-25">
                 <div className="text-[var(--color)] flex flex-col justify-center items-center gap-2 ">
                     <a className="text-4xl font-bold">Contact Me</a>
-                    <span className="opacity-70 w-1/2 text-center">Have a question or want to work together? Feel free to reach out. I'll get back to you as soon as possible.</span>
+                    <span className="opacity-70 w-1/2 text-center">Have a question or want to work together? let's contact me. i'll try to respond as fast as posible</span>
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center md:gap-5 mx-5 lg:mx-20 mt-10">
@@ -94,7 +93,7 @@ export default function Contact() {
 
                         <div className="absolute top-0 left-0 w-full h-full flex flex-col gap-5 items-center justify-center text-[var(--color)] font-bold backdrop-blur-xs rounded-2xl">
                             <a className="text-3xl text-center">Sorry Feature Not Working</a>
-                            <a className="w-1/2 text-center opacity-70">No money to buy server host for deploy backend service 🙃</a>
+                            <a className="w-1/2 text-center opacity-70">For Now</a>
                         </div>
 
                         <InputForm label="Name" type="text" placeholder="Your Name" valueName={name} setValue={setName} />

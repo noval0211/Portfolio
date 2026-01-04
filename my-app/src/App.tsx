@@ -38,27 +38,29 @@ function App() {
       <div className="overflow-x-hidden">
         <Navbar setSection={sectionMove} activeSection={activeSection} />
 
-        <section id="me" className="w-screen min-h-screen h-fit ">
+        <section id="me">
           <Me />
         </section>
+
+        <hr className="bg-[var(--color)] h-0.5 border-none"/>
 
         <section id="skills" className="w-screen min-h-screen h-fit">
           <Skills />
         </section>
 
-        <hr className="bg-[var(--color)] h-0.5" />
+        <hr className="bg-[var(--color)] h-0.5 border-none" />
 
         <section id="project" className="w-screen min-h-screen h-fit">
           <Project />
         </section>
 
-        <hr className="bg-[var(--color)] h-0.5" />
+        <hr className="bg-[var(--color)] h-0.5 border-none" />
 
         <section id="contact-me" className="w-screen min-h-screen h-fit">
           <Contact />
         </section>
 
-        <hr className="bg-[var(--color)] h-0.5" />
+        <hr className="bg-[var(--color)] h-0.5 border-none" />
         <Footer />
       </div>
     </>
