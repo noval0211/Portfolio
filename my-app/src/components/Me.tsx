@@ -4,7 +4,7 @@ export default function Me() {
     const [about, setAbout] = useState(false)
     return (
         <>
-            <div className="w-screen min-h-screen h-fit bg-[var(--color)] flex flex-col md:flex-row items-center justify-around select-none md:pr-24">
+            <div className="w-screen min-h-screen h-fit bg-[var(--color)] flex flex-col md:flex-row items-center md:items-start justify-around select-none md:pr-24">
 
                 {/* PROFILE PICTURE */}
                 <div className="w-full md:w-1/3 pt-30">
